@@ -35,7 +35,7 @@ png(filename = "outputs/time.to.captain.png",
 time.captain.plot <- ggplot(data = captains, 
   aes(x = cut(year.midshipman, pretty(year.midshipman, 12)), y = time.to.capt)) +
   geom_boxplot() +
-  ggtitle("Time to Promotion to Captain by Generation") +
+  ggtitle("Time to Promotion to Captain by Cohort") +
   xlab("Year commissioned as midshipman") +
   theme(axis.text.x=element_text(angle=25, hjust=1)) +
   ylab("Years till promotion")
@@ -51,7 +51,7 @@ png(filename = "outputs/time.to.lieutenant.png",
 time.lieutenant.plot <- ggplot(data = lieutenants, 
   aes(x = cut(year.midshipman, pretty(year.midshipman, 12)), y = time.to.lt)) +
   geom_boxplot() +
-  ggtitle("Time to Promotion to Lieutenant by Generation") +
+  ggtitle("Time to Promotion to Lieutenant by Cohort") +
   xlab("Year commissioned as midshipman") +
   theme(axis.text.x=element_text(angle=25, hjust=1)) +
   ylab("Years till promotion")
@@ -68,7 +68,7 @@ likelihood.captain.plot <- ggplot(data = promotions,
     fill = factor(is.na(time.to.capt)))) +
   geom_bar() +
   scale_fill_discrete(labels = c("Captain","Not captain")) +
-  ggtitle("Midshipmen Promoted to Captain by Generation") +
+  ggtitle("Midshipmen Promoted to Captain by Cohort") +
   xlab("Year commissioned as midshipman") +
   ylab(NULL) +
   theme(axis.text.x=element_text(angle=35, hjust=1)) +
@@ -84,7 +84,7 @@ likelihood.lieutenant.plot <- ggplot(data = promotions,
     fill = factor(is.na(time.to.lt)))) +
   geom_bar() +
   scale_fill_discrete(labels = c("Lieutenant","Not lieutenant")) +
-  ggtitle("Midshipmen Promoted to Lieutenant by Generation") +
+  ggtitle("Midshipmen Promoted to Lieutenant by Cohort") +
   xlab("Year commissioned as midshipman") +
   ylab(NULL) +
   theme(axis.text.x=element_text(angle=35, hjust=1)) +
